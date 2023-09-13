@@ -5,10 +5,12 @@ import { useState } from 'react';
 export default function Home(){
     const [numero1, setNumero1] = useState(0)
     const [numero2, setNumero2] = useState(0)
+    const [operacao, setOperacao] = useState('')
     const [numeroInformado, setNumeroInformado] = useState('') 
     const [certas, setCertas] = useState(0)
     const [erradas, setErradas] = useState(0)
     const [pontuacao, setPontuacao] = useState(0)
+    const [resultado, setResultado] = useState(0)
 
     function Sorteio() {
         const numero1 = Math.floor(Math.random() * 10)
@@ -16,13 +18,31 @@ export default function Home(){
 
         const numero2 = Math.floor(Math.random() * 10)
         setNumero2(numero2)
+
+        const operacaoNumero = Math.floor(Math.random() * 4)
+        let operacaoCaracter
+        if (operacaoNumero === 1){
+          setResultado(numero1 + numero2)
+          operacaoCaracter = '+'
+        } else if (operacaoNumero === 2){
+          setResultado(numero1 - numero2)
+          operacaoCaracter = '-'
+        } else if (operacaoNumero === 3){
+          setResultado(numero1 * numero2)
+          operacaoCaracter = '*'
+        } else {
+          setResultado(numero1 / numero2)
+          operacaoCaracter = '/'
+        }        
+
+        setOperacao(operacaoCaracter)
       }
     
       function Verifica() {
         const respostaUsuario = parseInt(numeroInformado);
         let acertou = certas;
         let errou = erradas;
-        if (respostaUsuario === numero1 + numero2) {
+        if (respostaUsuario === resultado) {
           Alert.alert('Resposta Correta!', `Deseja uma nova conta?`,
           [
             {
@@ -102,7 +122,7 @@ export default function Home(){
 
                 <View style={styles.alinhamentoContas}>
                     <Text style={styles.numeros}>{numero1}</Text>
-                    <Text style={styles.numeros}>+</Text>
+                    <Text style={styles.numeros}>{operacao}</Text>
                     <Text style={styles.numeros}>{numero2}</Text>
                 </View>
 
