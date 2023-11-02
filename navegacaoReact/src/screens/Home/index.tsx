@@ -1,5 +1,6 @@
 import { useNavigation } from "@react-navigation/native";
-import { Button, Text, View } from "react-native";
+import { Button, Image, Text, View } from "react-native";
+import { SafeAreaView } from "react-native-safe-area-context";
 
 export function Home(){
 
@@ -10,9 +11,10 @@ export function Home(){
     }
 
     return(
-        <View>
-            <Text>CESUL</Text>
+        <SafeAreaView>
+            <Image source={require('../../assets/logo.png')}/>
+
             <Button title="Próximo" color={'#01633D'} onPress={handleNext}/>
-        </View>
+        </SafeAreaView>
     )
 }
