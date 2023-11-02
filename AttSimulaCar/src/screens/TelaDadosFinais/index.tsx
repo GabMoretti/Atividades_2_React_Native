@@ -25,7 +25,7 @@ export function TelaDadosFinais() {
             <Text style={styles.tittle}>SIMULACAR</Text>
 
             <View  style={styles.espacamento}>
-                <Text style={styles.text}>Olá {objeto.nome}, fizemos um orçamento para seu veículo {objeto.carro}</Text>
+                <Text style={styles.text}>Olá {objeto.nome}, fizemos um orçamento para seu veículo {objeto.carro}.</Text>
 
                 <View style={styles.alinhamento}>
                     <View style={styles.resultados}>
