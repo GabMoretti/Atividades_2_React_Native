@@ -2,7 +2,6 @@ import { StyleSheet } from "react-native";
 
 export const styles = StyleSheet.create({
     conteiner: {
-        backgroundColor: "#9190b3",
         flex: 1, 
     },
 
@@ -22,7 +21,7 @@ export const styles = StyleSheet.create({
         fontSize: 20,
         color: "#fff",
         fontWeight: 'bold',
-        marginTop: 90
+        marginTop: 55
     },
 
     text2: {
@@ -45,7 +44,7 @@ export const styles = StyleSheet.create({
     button: {
         width: 340,
         height: 50,
-        marginTop: 90,
+        marginTop: 10,
     },
 
     textFooter: {
