@@ -1,11 +1,6 @@
 import { StyleSheet } from "react-native";
 
 export const styles = StyleSheet.create({
-    conteiner: {
-        backgroundColor: "#9190b3",
-        flex: 1, 
-    },
-
     tittle: {
         fontSize: 50,
         marginTop: 80,
@@ -42,7 +37,7 @@ export const styles = StyleSheet.create({
         fontSize: 20,
         color: "#5987cc",
         fontWeight: 'bold',
-        marginTop: 80,
+        marginTop: 29,
         textAlign: "center"
     },
 

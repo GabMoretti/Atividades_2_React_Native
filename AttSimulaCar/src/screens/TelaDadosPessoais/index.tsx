@@ -2,6 +2,7 @@ import { Button, Text, TextInput, TouchableOpacity, View } from "react-native";
 import { styles } from './styles'
 import { useNavigation, useRoute } from "@react-navigation/native";
 import { useState } from "react";
+import { LinearGradient } from 'expo-linear-gradient';
 
 export function TelaDadosPessoais() {
 
@@ -21,23 +22,26 @@ export function TelaDadosPessoais() {
     }
 
     return(
-        <View  style={styles.conteiner}>
-            <Text style={styles.tittle}>SIMULACAR</Text>
+        <View>
+            <LinearGradient 
+            colors={['#5374B6', '#B65353']}>
+                <Text style={styles.tittle}>SIMULACAR</Text>
 
-            <View  style={styles.espacamento}>
-                <Text style={styles.text}>Olá {objeto.nome}, vamos realizar uma simulação para um seguro</Text>
+                <View  style={styles.espacamento}>
+                    <Text style={styles.text}>Olá {objeto.nome}, vamos realizar uma simulação para um seguro</Text>
 
-                <Text style={styles.text}>Qual sua idade?</Text>
-                <TextInput style={styles.input} value={idade.toString()} onChangeText={setIdade}/>
+                    <Text style={styles.text}>Qual sua idade?</Text>
+                    <TextInput style={styles.input} value={idade.toString()} onChangeText={setIdade}/>
 
-                <View style={styles.button}> 
-                    <Button title="Próximo" color={'#01633D'} onPress={handleNext}/> 
+                    <View style={styles.button}> 
+                        <Button title="Próximo" color={'#01633D'} onPress={handleNext}/> 
+                    </View>
                 </View>
-            </View>
 
-            <TouchableOpacity>
-                    <Text style={styles.textFooter} onPress={handleBack}>Voltar</Text>
-            </TouchableOpacity>
+                <TouchableOpacity>
+                        <Text style={styles.textFooter} onPress={handleBack}>Voltar</Text>
+                </TouchableOpacity>
+            </LinearGradient>
         </View>
 
     )
