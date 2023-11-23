@@ -3,6 +3,7 @@ import { StyleSheet } from "react-native";
 export const styles = StyleSheet.create({
     conteiner: {
         flex: 1, 
+     justifyContent: `center`
     },
 
     tittle: {
@@ -15,6 +16,7 @@ export const styles = StyleSheet.create({
 
     espacamento: {
         marginLeft: 25,
+      
     },
 
     text: {
@@ -51,7 +53,7 @@ export const styles = StyleSheet.create({
         fontSize: 20,
         color: "#5987cc",
         fontWeight: 'bold',
-        marginTop: 120,
+        marginTop: 22,
         textAlign: "center"
     }
     

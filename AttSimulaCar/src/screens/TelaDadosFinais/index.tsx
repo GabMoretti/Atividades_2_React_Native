@@ -15,8 +15,10 @@ export function TelaDadosFinais() {
     const [valorIdade, setValorIdade] = useState(objeto.valorIdade);
     const [valorAno, setValorAno] = useState(objeto.valorAno);
     const [valorFinal, setValorFinal] = useState(objeto.valorFinal);
-    const [conversaoAtiva, setConversaoAtiva] = useState(false);
+    const [conversaoAtiva, setConversaoAtiva] = useState(false); 
     console.log('Route Params:', objeto);
+    const cpf = objeto.cpf;
+    const placa = objeto.placa;
 
     useEffect(() => {
         setValorBase(objeto.valorBase);
@@ -50,6 +52,9 @@ export function TelaDadosFinais() {
 
                 <View  style={styles.espacamento}>
                     <Text style={styles.text}>Olá {objeto.nome}, fizemos um orçamento para seu veículo {objeto.carro}.</Text>
+                    <Text style={{...styles.text, marginTop: 10}}>CPF                       {cpf}</Text>
+
+                    <Text style={{...styles.text, marginTop: 1}}>PLACA DO VEICULO       {placa}</Text>
 
                     <View style={styles.alinhamento}>
                         <View style={styles.resultados}>
@@ -78,7 +83,7 @@ export function TelaDadosFinais() {
                         text={conversaoAtiva ? "Voltar para Real" : "Conversão para dólar"}
                         fillColor="#000"
                         textStyle={{ color: '#fff' }}
-                        style={{marginTop: 50}}
+                        style={{marginTop: 35}}
                         
                     />
 

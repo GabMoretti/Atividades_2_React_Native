@@ -1,14 +1,16 @@
-import { Button, Text, TextInput, TouchableOpacity, View } from "react-native";
+import { Button, KeyboardAvoidingView, Text, TextInput, TouchableOpacity, View } from "react-native";
 import { styles } from './styles'
 import { useNavigation, useRoute } from "@react-navigation/native";
 import { useState } from "react";
 import { LinearGradient } from 'expo-linear-gradient';
+import { TextInputMask } from "react-native-masked-text";
 
 export function TelaDadosVeiculos() {
 
     const [ carro, setCarro ] = useState('')
     const [ ano, setAno ] = useState('')
-    const [ valorCarro, setValorCarro] = useState(0)
+    const [ valorCarro, setValorCarro] = useState('')
+    const [ placa, setPlaca] = useState('')
 
     const navigation = useNavigation()
     const route = useRoute()
@@ -51,7 +53,7 @@ export function TelaDadosVeiculos() {
 
         valorFinal = valorSeguro + valorAno
 
-        navigation.navigate('telaDadosFinais', {nome: objeto.nome, carro, valorIdade, valorAno, valorFinal, valorBase})
+        navigation.navigate('telaDadosFinais', {nome: objeto.nome, carro, valorIdade, valorAno, valorFinal, valorBase, cpf: objeto.cpf, placa: placa})
     
     }
 
@@ -60,10 +62,11 @@ export function TelaDadosVeiculos() {
     }
 
     return(
-        <View>
+
             <LinearGradient 
-            colors={['#5374B6', '#B65353']}>
-                <Text style={styles.tittle}>SIMULACAR</Text>
+            colors={['#5374B6', '#B65353']} style={styles.conteiner}>
+                        <KeyboardAvoidingView behavior="padding" style={styles.conteiner}>
+            <Text style={styles.tittle}>SIMULACAR</Text>
 
                 <View  style={styles.espacamento}>
                     <Text style={styles.text}>Olá {objeto.nome}, Agora vamos solicitar os dados do seu veiculo</Text>
@@ -77,6 +80,15 @@ export function TelaDadosVeiculos() {
                     <Text style={styles.text2}>Qual valor do seu carro</Text>
                     <TextInput style={styles.input} value={valorCarro.toString()} onChangeText={setValorCarro}/>
 
+                    <Text style={styles.text2}>Qual a placa do seu carro</Text>
+                    <TextInputMask
+                        type="custom"
+                        options={{ mask: 'AAA-9A99' }}
+                        value={placa}
+                        onChangeText={setPlaca}
+                        style={styles.input}
+                    />
+
                     <View style={styles.button}> 
                         <Button title="Próximo" color={'#01633D'} onPress={handleNext} /> 
                     </View>
@@ -85,8 +97,9 @@ export function TelaDadosVeiculos() {
                 <TouchableOpacity>
                         <Text style={styles.textFooter} onPress={handleBack}>Voltar</Text>
                 </TouchableOpacity>
+                </KeyboardAvoidingView>
             </LinearGradient>
-        </View>
-
+          
+  
     )
 }
