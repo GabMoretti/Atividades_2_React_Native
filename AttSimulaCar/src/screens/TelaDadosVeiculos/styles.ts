@@ -2,8 +2,8 @@ import { StyleSheet } from "react-native";
 
 export const styles = StyleSheet.create({
     conteiner: {
-        backgroundColor: "#9190b3",
         flex: 1, 
+     justifyContent: `center`
     },
 
     tittle: {
@@ -16,13 +16,14 @@ export const styles = StyleSheet.create({
 
     espacamento: {
         marginLeft: 25,
+      
     },
 
     text: {
         fontSize: 20,
         color: "#fff",
         fontWeight: 'bold',
-        marginTop: 90
+        marginTop: 55
     },
 
     text2: {
@@ -45,14 +46,14 @@ export const styles = StyleSheet.create({
     button: {
         width: 340,
         height: 50,
-        marginTop: 90,
+        marginTop: 10,
     },
 
     textFooter: {
         fontSize: 20,
         color: "#5987cc",
         fontWeight: 'bold',
-        marginTop: 120,
+        marginTop: 22,
         textAlign: "center"
     }
     

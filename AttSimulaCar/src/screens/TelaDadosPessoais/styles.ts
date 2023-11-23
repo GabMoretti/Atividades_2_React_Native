@@ -2,7 +2,6 @@ import { StyleSheet } from "react-native";
 
 export const styles = StyleSheet.create({
     conteiner: {
-        backgroundColor: "#9190b3",
         flex: 1, 
     },
 
@@ -22,7 +21,6 @@ export const styles = StyleSheet.create({
         fontSize: 20,
         color: "#fff",
         fontWeight: 'bold',
-        marginTop: 90
     },
 
     input: {
@@ -45,7 +43,7 @@ export const styles = StyleSheet.create({
         fontSize: 20,
         color: "#5987cc",
         fontWeight: 'bold',
-        marginTop: 120,
+        marginTop: 76,
         textAlign: "center"
     }
     

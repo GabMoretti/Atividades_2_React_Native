@@ -1,11 +1,6 @@
 import { StyleSheet } from "react-native";
 
 export const styles = StyleSheet.create({
-    conteiner: {
-        backgroundColor: "#9190b3",
-        flex: 1, 
-    },
-
     tittle: {
         fontSize: 50,
         marginTop: 80,
@@ -35,14 +30,14 @@ export const styles = StyleSheet.create({
     button: {
         width: 340,
         height: 50,
-        marginTop: 90,
+        marginTop: 15,
     },
 
     textFooter: {
         fontSize: 20,
         color: "#5987cc",
         fontWeight: 'bold',
-        marginTop: 80,
+        marginTop: 15,
         textAlign: "center"
     },
 
@@ -66,7 +61,7 @@ export const styles = StyleSheet.create({
         flexDirection: "row",
         justifyContent: "space-between",
         backgroundColor: "#d9d9d9",
-        marginTop: 50,
+        marginTop: 16,
         height: 50,
         alignItems: "center",
     }
